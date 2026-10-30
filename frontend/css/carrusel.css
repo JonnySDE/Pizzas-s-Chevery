@@ -1,0 +1,200 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.carrusel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: var(--rojo);
+}
+
+.carrusel-pista {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+}
+
+.carrusel-pista::-webkit-scrollbar {
+    display: none;
+}
+
+.promo {
+    display: grid;
+    flex: 0 0 100%;
+    min-width: 0;
+    min-height: 300px;
+    grid-template-columns: 1.2fr 1fr;
+    color: var(--crema);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.promo-tomate { background: linear-gradient(110deg, var(--rojo), var(--terracota)); }
+.promo-albahaca { background: linear-gradient(110deg, var(--verde-oscuro), var(--verde)); }
+.promo-horno { background: linear-gradient(110deg, var(--horno), var(--horno-2)); }
+
+.promo-copy {
+    align-self: center;
+    padding: 50px 52px 68px;
+}
+
+.promo .etiqueta {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: var(--crema);
+    color: var(--rojo);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: .3px;
+}
+
+.promo-albahaca .etiqueta { color: var(--verde); }
+.promo-horno .etiqueta { color: var(--horno); }
+
+.promo h2 {
+    margin: 18px 0 12px;
+    font-size: 34px;
+    line-height: 1.1;
+}
+
+.promo h2 span { color: var(--naranja); }
+
+.promo p {
+    max-width: 430px;
+    margin: 0 0 22px;
+    color: #f3dfc0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.promo-albahaca .boton.secundario { color: var(--verde); }
+.promo-horno .boton.secundario { color: var(--horno); }
+
+.promo-visual {
+    position: relative;
+    display: grid;
+    min-height: 300px;
+    place-items: center;
+    overflow: hidden;
+}
+
+.promo-visual svg {
+    display: block;
+    width: 280px;
+    max-width: 86%;
+    height: auto;
+}
+
+.promo-foto img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promo-foto::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(169 46 23 / 55%), transparent 38%);
+    content: "";
+}
+
+.f-crema { fill: var(--crema); }
+.f-naranja { fill: var(--naranja); }
+.f-rojo { fill: var(--rojo); }
+.f-verde { fill: var(--verde); }
+.f-horno { fill: var(--horno); }
+.f-borde { fill: var(--borde); }
+.t-crema { fill: var(--crema); }
+.t-rojo { fill: var(--rojo); }
+.t-verde { fill: var(--verde-oscuro); }
+.t-horno { fill: var(--horno); }
+.s-velo { fill: rgb(248 233 208 / 9%); }
+
+.carrusel-flecha {
+    position: absolute;
+    top: 50%;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    padding: 0 0 3px;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 50%;
+    background: rgb(248 233 208 / 88%);
+    color: var(--horno);
+    font-size: 24px;
+    line-height: 1;
+    place-items: center;
+    opacity: .85;
+    transition: opacity .2s, background .2s;
+}
+
+.carrusel-flecha:hover,
+.carrusel-flecha:focus-visible { background: var(--crema); opacity: 1; }
+.carrusel-flecha.anterior { left: 10px; }
+.carrusel-flecha.siguiente { right: 10px; }
+
+.carrusel-puntos {
+    position: absolute;
+    bottom: 26px;
+    left: 52px;
+    display: flex;
+    gap: 8px;
+}
+
+.carrusel-punto {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(248 233 208 / 45%);
+    transition: width .25s, background .25s;
+}
+
+.carrusel-punto[aria-current="true"] {
+    width: 24px;
+    border-radius: 8px;
+    background: var(--crema);
+}
+
+.carrusel button:focus-visible,
+.carrusel a:focus-visible {
+    outline: 2px solid var(--naranja);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carrusel-punto,
+    .carrusel-flecha { transition: none; }
+}
+
+@media (max-width: 760px) {
+    .promo { grid-template-columns: 1fr; }
+    .promo-copy { padding: 34px 34px 62px; }
+    .promo-visual { min-height: 190px; }
+    .promo-visual svg { width: auto; max-height: 190px; }
+    .carrusel-puntos { bottom: 22px; left: 34px; }
+    .carrusel-flecha { top: auto; bottom: 12px; transform: none; }
+    .carrusel-flecha.anterior { right: 56px; left: auto; }
+    .carrusel-flecha.siguiente { right: 12px; }
+}
+
+@media (max-width: 500px) {
+    .promo h2 { font-size: 27px; }
+}

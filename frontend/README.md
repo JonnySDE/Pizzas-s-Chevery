@@ -7,6 +7,8 @@
 - `paginas/carrito.html`: carrito y datos de envío.
 - `paginas/pedido.html`: confirmación del pedido.
 
-Cada archivo HTML define su propio contenido. Los estilos compartidos están en `css/base.css` y cada pantalla enlaza su hoja de estilos correspondiente. La carpeta `js/` queda disponible para agregar interacciones cuando se definan; JavaScript no se usa para construir ni insertar las páginas.
+Cada archivo HTML define la estructura de su pantalla. Los estilos compartidos están en `css/base.css` y cada pantalla enlaza su hoja correspondiente. JavaScript carga los datos de la API en plantillas HTML y atiende interacciones; no genera las páginas completas.
 
-Agrega las imágenes a `imagenes/` con estos nombres: `pizza-pepperoni.jpg`, `pizza-hawaiana.jpg`, `pizza-mexicana.jpg`, `pizza-carnes.jpg` y `pizza-vegetariana.jpg`.
+Para ejecutar la página conectada, sigue las instrucciones de [backend/README.md](../backend/README.md). FastAPI sirve los HTML y expone la API en el mismo origen.
+
+Las imágenes de las pizzas y los iconos están en `imagenes/`. El catálogo de la API entrega la ruta de cada foto.

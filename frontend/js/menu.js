@@ -1,56 +1,115 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tarjetas = document.querySelectorAll('.producto-menu');
+document.addEventListener('DOMContentLoaded', cargarMenu);
 
-    document.querySelectorAll('.producto-menu .tamanos button').forEach((boton) => {
-        boton.addEventListener('click', () => {
-            const tarjeta = boton.closest('.producto-menu');
-            const precio = boton.textContent.match(/\$(\d+)/)?.[1];
+async function cargarMenu() {
+    try {
+        const [pizzas, masas, carrito] = await Promise.all([
+            solicitarAPI('/catalogo/pizzas'),
+            solicitarAPI('/catalogo/masas'),
+            obtenerCarritoActivo()
+        ]);
 
-            tarjeta.querySelectorAll('.tamanos button').forEach((opcion) => {
+        actualizarContadorCarrito(carrito.resumen.total_pizzas);
+        mostrarPizzasMenu(pizzas);
+        mostrarMasasMenu(masas);
+        activarFiltrosMenu();
+    } catch (error) {
+        mostrarError(`No se pudo conectar con el menú: ${error.message}`);
+    }
+}
+
+function mostrarPizzasMenu(pizzas) {
+    const lista = document.querySelector('[data-lista-menu]');
+    const plantilla = document.querySelector('#plantilla-producto-menu');
+    lista.replaceChildren();
+
+    pizzas.forEach((pizza, indice) => {
+        const tarjeta = plantilla.content.firstElementChild.cloneNode(true);
+        tarjeta.dataset.destacado = String(pizza.destacado);
+        tarjeta.dataset.pizza = pizza.id_pizza;
+        tarjeta.querySelector('[data-etiqueta]').textContent = pizza.etiqueta || '';
+        asignarImagen(tarjeta.querySelector('[data-imagen]'), pizza);
+        tarjeta.querySelector('[data-nombre]').textContent = `${indice + 1}. ${pizza.sabor}`;
+        tarjeta.querySelector('[data-descripcion]').textContent = pizza.descripcion || '';
+
+        const precioActual = tarjeta.querySelector('[data-precio]');
+        const botonAgregar = tarjeta.querySelector('[data-agregar]');
+        const listaTamanos = tarjeta.querySelector('[data-tamanos]');
+        let tamanoSeleccionado = pizza.tamanos.find((tamano) => tamano.orden === 2) || pizza.tamanos[0];
+
+        function seleccionarTamano(tamano, boton) {
+            tamanoSeleccionado = tamano;
+            listaTamanos.querySelectorAll('button').forEach((opcion) => {
                 opcion.classList.remove('activo');
                 opcion.setAttribute('aria-pressed', 'false');
             });
-
             boton.classList.add('activo');
             boton.setAttribute('aria-pressed', 'true');
+            precioActual.innerHTML = `${formatearDinero(tamano.precio)} <small>MXN</small>`;
+            botonAgregar.disabled = tamano.stock < 1;
+            botonAgregar.title = tamano.stock < 1 ? 'Sin existencia' : '';
+        }
 
-            if (precio) {
-                tarjeta.querySelector('.precio-grande').innerHTML = `$${precio}.00 <small>MXN</small>`;
-            }
+        pizza.tamanos.forEach((tamano) => {
+            const boton = document.createElement('button');
+            boton.type = 'button';
+            boton.textContent = `${abreviarTamano(tamano.nombre_tamano)}: ${formatearDinero(tamano.precio)}`;
+            boton.addEventListener('click', () => seleccionarTamano(tamano, boton));
+            listaTamanos.append(boton);
+            if (tamano === tamanoSeleccionado) seleccionarTamano(tamano, boton);
         });
+
+        botonAgregar.addEventListener('click', () => {
+            const masa = document.querySelector('[data-masa].seleccionada');
+            agregarAlCarrito(tamanoSeleccionado.id_pizza_tamano, Number(masa?.dataset.idMasa), botonAgregar);
+        });
+
+        lista.append(tarjeta);
     });
+}
 
-    document.querySelectorAll('.filtros button').forEach((boton, indice) => {
+async function mostrarMasasMenu(masas) {
+    const lista = document.querySelector('[data-opciones-masa]');
+    const plantilla = document.querySelector('#plantilla-opcion-masa');
+    lista.replaceChildren();
+
+    masas.forEach((masa, indice) => {
+        const boton = plantilla.content.firstElementChild.cloneNode(true);
+        boton.dataset.idMasa = masa.id_masa;
+        boton.textContent = `${masa.nombre} (+ ${formatearDinero(masa.precio_extra)} MXN)`;
+        boton.classList.toggle('seleccionada', indice === 0);
+        boton.setAttribute('aria-pressed', String(indice === 0));
         boton.addEventListener('click', () => {
-            document.querySelectorAll('.filtros button').forEach((filtro) => {
-                filtro.classList.remove('activo');
-                filtro.setAttribute('aria-pressed', 'false');
+            lista.querySelectorAll('button').forEach((opcion) => {
+                opcion.classList.remove('seleccionada');
+                opcion.setAttribute('aria-pressed', 'false');
             });
-
-            boton.classList.add('activo');
+            boton.classList.add('seleccionada');
             boton.setAttribute('aria-pressed', 'true');
+        });
+        lista.append(boton);
+    });
+}
 
-            tarjetas.forEach((tarjeta, posicion) => {
-                const mostrar = indice === 0 || posicion < 2;
-                tarjeta.hidden = !mostrar;
+function activarFiltrosMenu() {
+    const filtros = document.querySelectorAll('.filtros button');
+    filtros.forEach((filtro, indice) => {
+        filtro.addEventListener('click', () => {
+            filtros.forEach((opcion) => opcion.classList.remove('activo'));
+            filtro.classList.add('activo');
 
-                if (mostrar) {
+            document.querySelectorAll('.producto-menu').forEach((tarjeta, posicion) => {
+                tarjeta.hidden = indice === 1 && posicion > 1;
+                if (!tarjeta.hidden) {
                     tarjeta.classList.remove('aparecer');
                     requestAnimationFrame(() => tarjeta.classList.add('aparecer'));
                 }
             });
         });
     });
+}
 
-    document.querySelectorAll('.opciones-masa button').forEach((boton) => {
-        boton.addEventListener('click', () => {
-            document.querySelectorAll('.opciones-masa button').forEach((opcion) => {
-                opcion.classList.remove('seleccionada');
-                opcion.setAttribute('aria-pressed', 'false');
-            });
-
-            boton.classList.add('seleccionada');
-            boton.setAttribute('aria-pressed', 'true');
-        });
-    });
-});
+function abreviarTamano(nombre) {
+    if (nombre.toLowerCase().startsWith('med')) return 'Med.';
+    if (nombre.toLowerCase().startsWith('fam')) return 'Fam.';
+    return nombre;
+}

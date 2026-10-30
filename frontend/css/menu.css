@@ -46,7 +46,7 @@
 .filtros button:hover,
 .opciones-masa button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px #294c2920;
+    box-shadow: 0 4px 10px #2a503020;
 }
 
 .filtros button:active,
@@ -74,7 +74,7 @@
 
 .producto-menu:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 22px #294c2920;
+    box-shadow: 0 10px 22px #2a503020;
 }
 
 .producto-menu .insignia {
@@ -112,7 +112,7 @@
     height: 141px;
     object-fit: cover;
     border-radius: 13px;
-    background: #d6c1a4;
+    background: #f2dcb8;
     transition: transform 300ms ease;
 }
 
@@ -152,7 +152,7 @@
     min-width: 0;
     border: 1px solid var(--borde);
     border-radius: 8px;
-    background: #f3d8b1;
+    background: #f2dcb8;
     padding: 7px 4px;
     color: var(--verde);
     font-size: 10px;
@@ -164,7 +164,7 @@
     background: var(--verde);
     color: white;
     transform: scale(1.06);
-    box-shadow: 0 4px 9px #294c2928;
+    box-shadow: 0 4px 9px #2a503028;
     position: relative;
     z-index: 1;
 }
@@ -195,13 +195,13 @@
 
 .producto-menu .boton:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px #294c2930;
+    box-shadow: 0 5px 12px #2a503030;
 }
 
 .pagina-menu .masa {
     margin: 56px 0 0;
     padding: 24px 30px;
-    background: #f3d9b4;
+    background: #f2dcb8;
 }
 
 .pagina-menu .masa h3 {
@@ -233,27 +233,18 @@
     font-weight: bold;
 }
 
-.opciones-masa button:nth-child(3) {
-    background: var(--verde);
-    color: var(--crema);
-}
-
-.opciones-masa button:nth-child(4) {
-    border-color: var(--rojo);
-    background: var(--rojo);
-    color: var(--crema);
-}
-
-.opciones-masa button:nth-child(2) {
-    background: var(--crema);
-}
-
 .opciones-masa button.seleccionada {
     border-color: var(--verde);
     background: var(--verde);
     color: var(--crema);
     transform: scale(1.04);
-    box-shadow: 0 4px 10px #294c2928;
+    box-shadow: 0 4px 10px #2a503028;
+}
+
+.opciones-masa button {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
 }
 
 .producto-menu[hidden] {

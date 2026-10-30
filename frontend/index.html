@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#294c29">
+    <meta name="theme-color" content="#2a5030">
 
     <title>Inicio | Pizzería Chevery</title>
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/carrusel.css">
+    <script src="js/carrusel.js" defer></script>
 </head>
 
 <body>
@@ -24,41 +26,135 @@
         </nav>
 
         <div class="acciones-encabezado">
-            <a class="carrito-encabezado" href="paginas/carrito.html" aria-label="Ver carrito, 2 productos">
+            <a class="carrito-encabezado" href="paginas/carrito.html" aria-label="Ver carrito">
                 <img src="imagenes/icono-carrito.svg" alt="">
-                <span class="contador-carrito">2</span>
+                <span class="contador-carrito" data-cantidad-carrito>0</span>
             </a>
             <a class="boton" href="paginas/menu.html">Ver Menú</a>
         </div>
     </header>
 
     <main class="contenedor inicio">
-        <section class="hero">
-            <div class="hero-copy">
-                <span class="etiqueta">
-                    PROMOCIÓN DEL DÍA
-                </span>
+        <p class="mensaje-error" data-aviso role="alert" hidden></p>
+        <section class="carrusel" data-carrusel aria-roledescription="carrusel" aria-label="Promociones de Pizzería Chevery">
+            <h1 class="sr-only">Pizzería Chevery: promociones</h1>
 
-                <h1>
-                    ¡Martes de Locura!
-                    <br>
-                    <span>2×1 en Pizzas Medianas</span>
-                </h1>
+            <div class="carrusel-pista">
+                <article class="promo promo-tomate" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
+                    <div class="promo-copy">
+                        <span class="etiqueta">TODOS LOS MARTES</span>
 
-                <p>
-                    Especialidades Pepperoni o Hawaiana.
-                    Válido solo en pedidos a domicilio.
-                </p>
+                        <h2>
+                            ¡Martes de Locura!
+                            <br>
+                            <span>2×1 en Pizzas Medianas</span>
+                        </h2>
 
-                <a class="boton secundario" href="paginas/menu.html">
-                    Aprovechar 2×1 →
-                </a>
+                        <p>
+                            Especialidades Pepperoni o Hawaiana.
+                            Válido solo en pedidos a domicilio.
+                        </p>
+
+                        <a class="boton secundario" href="paginas/menu.html">
+                            Aprovechar 2×1 →
+                        </a>
+                    </div>
+
+                    <div class="promo-visual promo-foto">
+                        <img src="imagenes/pizza-pepperoni.png" alt="Pizza pepperoni">
+                    </div>
+                </article>
+
+                <article class="promo promo-albahaca" role="group" aria-roledescription="diapositiva" aria-label="2 de 3">
+                    <div class="promo-copy">
+                        <span class="etiqueta">PROMO INSTAGRAM</span>
+
+                        <h2>
+                            ¡Síguenos y brinda!
+                            <br>
+                            <span>Refresco de 500 mL gratis</span>
+                        </h2>
+
+                        <p>
+                            Sigue nuestra página de Instagram y muestra que nos
+                            sigues al hacer tu pedido. El refresco va por nuestra cuenta.
+                        </p>
+
+                        <a class="boton secundario" href="https://www.instagram.com/PizzasChevery/" target="_blank" rel="noopener">
+                            Seguir en Instagram →
+                        </a>
+                    </div>
+
+                    <div class="promo-visual" aria-hidden="true">
+                        <svg viewBox="0 0 240 240" width="210" height="210" focusable="false">
+                            <circle class="s-velo" cx="120" cy="124" r="104"/>
+                            <circle class="s-velo" cx="120" cy="124" r="78"/>
+                            <rect class="f-naranja" x="124" y="20" width="9" height="76" rx="4.5" transform="rotate(14 128 58)"/>
+                            <rect class="f-crema" x="66" y="76" width="108" height="15" rx="7.5"/>
+                            <path class="f-rojo" d="M74 91H166L157 214Q156 223 147 223H93Q84 223 83 214Z"/>
+                            <polygon class="f-crema" points="77.6,138 162.4,138 159.4,180 80.6,180"/>
+                            <text class="t-verde" x="120" y="165" text-anchor="middle" font-size="20" font-weight="800">500 mL</text>
+                            <circle class="f-naranja" cx="96" cy="112" r="4"/>
+                            <circle class="f-naranja" cx="142" cy="120" r="3"/>
+                            <g transform="rotate(12 182 66)">
+                                <circle class="f-naranja" cx="182" cy="66" r="36"/>
+                                <text class="t-rojo" x="182" y="72" text-anchor="middle" font-size="16" font-weight="800">GRATIS</text>
+                            </g>
+                        </svg>
+                    </div>
+                </article>
+
+                <article class="promo promo-horno" role="group" aria-roledescription="diapositiva" aria-label="3 de 3">
+                    <div class="promo-copy">
+                        <span class="etiqueta">ESTUDIANTES UP CHIAPAS</span>
+
+                        <h2>
+                            ¡Tu credencial vale!
+                            <br>
+                            <span>7% de descuento</span>
+                        </h2>
+
+                        <p>
+                            Presenta tu credencial de estudiante de la UP Chiapas
+                            y recibe 7% de descuento en tu pedido.
+                        </p>
+
+                        <a class="boton secundario" href="paginas/menu.html">
+                            Ver el menú →
+                        </a>
+                    </div>
+
+                    <div class="promo-visual" aria-hidden="true">
+                        <svg viewBox="0 0 260 220" width="230" height="195" focusable="false">
+                            <circle class="s-velo" cx="130" cy="112" r="100"/>
+                            <g transform="rotate(-6 130 120)">
+                                <rect class="f-crema" x="28" y="52" width="190" height="124" rx="14"/>
+                                <rect class="f-verde" x="28" y="52" width="190" height="32" rx="14"/>
+                                <rect class="f-verde" x="28" y="70" width="190" height="14"/>
+                                <text class="t-crema" x="42" y="73" font-size="12" font-weight="800">UP CHIAPAS</text>
+                                <circle class="f-naranja" cx="68" cy="124" r="22"/>
+                                <circle class="f-horno" cx="68" cy="118" r="8"/>
+                                <path class="f-horno" d="M52 142Q68 126 84 142Z"/>
+                                <rect class="f-borde" x="104" y="108" width="96" height="8" rx="4"/>
+                                <rect class="f-borde" x="104" y="126" width="72" height="8" rx="4"/>
+                                <rect class="f-borde" x="104" y="144" width="84" height="8" rx="4"/>
+                            </g>
+                            <g transform="rotate(10 208 58)">
+                                <circle class="f-naranja" cx="208" cy="58" r="38"/>
+                                <text class="t-horno" x="208" y="68" text-anchor="middle" font-size="30" font-weight="800">7%</text>
+                            </g>
+                        </svg>
+                    </div>
+                </article>
             </div>
 
-            <div
-                aria-label="Pizza pepperoni"
-                class="hero-imagen"
-                role="img">
+            <button class="carrusel-flecha anterior" type="button" aria-label="Promoción anterior">‹</button>
+            <button class="carrusel-flecha siguiente" type="button" aria-label="Promoción siguiente">›</button>
+
+            <div class="carrusel-puntos">
+                <button class="carrusel-punto" type="button" aria-label="Ir a la promoción 1" aria-current="true"></button>
+                <button class="carrusel-punto" type="button" aria-label="Ir a la promoción 2"></button>
+                <button class="carrusel-punto" type="button" aria-label="Ir a la promoción 3"></button>
             </div>
         </section>
 
@@ -78,103 +174,23 @@
                 </a>
             </div>
 
-            <div class="productos">
-                <article class="tarjeta producto">
-                    <span class="insignia">
-                        MÁS VENDIDA
-                    </span>
-
-                    <img
-                        src="imagenes/pizza-pepperoni.png"
-                        alt="Pizza pepperoni">
-
-                    <h3>1. Pepperoni</h3>
-
-                    <p>
-                        Queso mozzarella derretido y generosas rodajas
-                        de pepperoni tradicional.
-                    </p>
-
-                    <div class="precios">
-                        Chica: $110 | Mediana: $160 | Familiar: $220
-                    </div>
-
-                    <div class="producto-pie">
-                        <span class="precio-grande">
-                            $110.00
-                            <small>MXN</small>
-                        </span>
-
-                        <a class="boton" href="paginas/menu.html">
-                            + Agregar
-                        </a>
-                    </div>
-                </article>
-
-                <article class="tarjeta producto">
-                    <span class="insignia">
-                        TROPICAL
-                    </span>
-
-                    <img
-                        src="imagenes/pizza-hawaiana.png"
-                        alt="Pizza hawaiana">
-
-                    <h3>2. Hawaiana</h3>
-
-                    <p>
-                        Jamón selecto, piña dulce en trozos y extra
-                        queso mozzarella fundido.
-                    </p>
-
-                    <div class="precios">
-                        Chica: $120 | Mediana: $170 | Familiar: $230
-                    </div>
-
-                    <div class="producto-pie">
-                        <span class="precio-grande">
-                            $120.00
-                            <small>MXN</small>
-                        </span>
-
-                        <a class="boton" href="paginas/menu.html">
-                            + Agregar
-                        </a>
-                    </div>
-                </article>
-
-                <article class="tarjeta producto">
-                    <span class="insignia">
-                        LOCAL
-                    </span>
-
-                    <img
-                        src="imagenes/pizza-mexicana.png"
-                        alt="Pizza mexicana">
-
-                    <h3>3. La Mexicana</h3>
-
-                    <p>
-                        Chorizo, jalapeño en rodajas, cebolla morada
-                        y deliciosa base de frijoles.
-                    </p>
-
-                    <div class="precios">
-                        Chica: $135 | Mediana: $185 | Familiar: $250
-                    </div>
-
-                    <div class="producto-pie">
-                        <span class="precio-grande">
-                            $135.00
-                            <small>MXN</small>
-                        </span>
-
-                        <a class="boton" href="paginas/menu.html">
-                            + Agregar
-                        </a>
-                    </div>
-                </article>
+            <div class="productos" data-productos-inicio>
+                <p class="mensaje-carga">Cargando especialidades...</p>
             </div>
+
+            <template id="plantilla-producto-inicio">
+                <article class="tarjeta producto">
+                    <span class="insignia" data-etiqueta></span>
+                    <img data-imagen alt="">
+                    <h3 data-nombre></h3>
+                    <p data-descripcion></p>
+                    <div class="precios" data-precios></div>
+                    <div class="producto-pie">
+                        <span class="precio-grande" data-precio></span>
+                        <button class="boton" type="button" data-agregar>+ Agregar</button>
+                    </div>
+                </article>
+            </template>
         </section>
 
         <section class="tarjeta masa">
@@ -185,23 +201,13 @@
                 El costo se suma automáticamente al total.
             </p>
 
-            <div class="opciones-masa">
-                <button>
-                    Tradicional ($0.00)
-                </button>
-
-                <button>
-                    Fina y Crujiente ($0.00)
-                </button>
-
-                <button class="seleccionada">
-                    Orilla Rellena Queso (+ $30)
-                </button>
-
-                <button>
-                    Orilla Queso + Pepperoni (+ $45)
-                </button>
+            <div class="opciones-masa" data-opciones-masa>
+                <span class="mensaje-carga">Cargando masas...</span>
             </div>
+
+            <template id="plantilla-opcion-masa">
+                <button type="button" data-masa></button>
+            </template>
         </section>
 
         <section class="beneficios">
@@ -291,11 +297,11 @@
                 <h3>Redes sociales</h3>
 
                 <p>
-                    <img src="imagenes/icono-instagram.svg" alt=""> PizzasChevery
+                    <a href="https://www.instagram.com/PizzasChevery/" target="_blank" rel="noopener noreferrer"><img src="imagenes/icono-instagram.svg" alt=""> PizzasChevery</a>
                 </p>
 
                 <p>
-                    <img src="imagenes/icono-correo.svg" alt=""> cheverypizzas@gmail.com
+                    <a href="mailto:cheverypizzas@gmail.com"><img src="imagenes/icono-correo.svg" alt=""> cheverypizzas@gmail.com</a>
                 </p>
             </section>
         </div>
@@ -304,5 +310,7 @@
             © 2026 Pizzería Chevery. Todos los derechos reservados.
         </div>
     </footer>
+    <script src="js/api.js"></script>
+    <script src="js/inicio.js"></script>
 </body>
 </html>
