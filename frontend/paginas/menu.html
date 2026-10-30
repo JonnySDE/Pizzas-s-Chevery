@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menú | Pizzería Chevery</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <a class="marca" href="../index.html">
+            <img src="../imagenes/logo-chevery.png" alt="Pizzería Chevery">
+        </a>
+
+        <nav class="navegacion">
+            <a href="../index.html">Inicio</a>
+            <a class="activa" href="menu.html">Menú</a>
+        </nav>
+
+        <div class="acciones-encabezado">
+            <a class="carrito-encabezado" href="carrito.html" aria-label="Ver carrito, 2 productos">
+                <img src="../imagenes/icono-carrito.svg" alt="">
+                <span class="contador-carrito">2</span>
+            </a>
+            <a class="boton" href="carrito.html">Ver Carrito</a>
+        </div>
+    </header>
+
+    <main class="contenedor pagina-menu">
+        <h1 class="titulo-pagina">
+            Nuestro Menú de Especialidades
+        </h1>
+
+        <p class="subtitulo">
+            Pizzas artesanales recién horneadas. Elige tu especialidad,
+            tamaño y personaliza tu base favorita.
+        </p>
+
+        <div class="filtros">
+            <button class="activo">
+                Todas
+            </button>
+
+            <button>
+                Promociones
+            </button>
+        </div>
+
+        <div class="grid-menu">
+            <article class="tarjeta producto-menu">
+                <span class="insignia">
+                    MÁS VENDIDA
+                </span>
+
+                <img
+                    src="../imagenes/pizza-pepperoni.png"
+                    alt="Pizza pepperoni">
+
+                <h3>1. La Clásica (Pepperoni)</h3>
+
+                <p>
+                    Queso mozzarella derretido y generosas rodajas
+                    de pepperoni tradicional.
+                </p>
+
+                <label>Tamaños y Precios:</label>
+
+                <div class="tamanos">
+                    <button>
+                        Chica: $110
+                    </button>
+
+                    <button class="activo">
+                        Med.: $160
+                    </button>
+
+                    <button>
+                        Fam.: $220
+                    </button>
+                </div>
+
+                <div class="producto-pie">
+                    <span class="precio-grande">
+                        $160.00
+                        <small>MXN</small>
+                    </span>
+
+                    <a class="boton" href="carrito.html">
+                        + Agregar
+                    </a>
+                </div>
+            </article>
+
+            <article class="tarjeta producto-menu">
+                <span class="insignia">
+                    TROPICAL
+                </span>
+
+                <img
+                    src="../imagenes/pizza-hawaiana.png"
+                    alt="Pizza hawaiana">
+
+                <h3>2. Hawaiana</h3>
+
+                <p>
+                    Jamón selecto, piña dulce en trozos y extra
+                    queso mozzarella fundido.
+                </p>
+
+                <label>Tamaños y Precios:</label>
+
+                <div class="tamanos">
+                    <button>
+                        Chica: $120
+                    </button>
+
+                    <button class="activo">
+                        Med.: $170
+                    </button>
+
+                    <button>
+                        Fam.: $230
+                    </button>
+                </div>
+
+                <div class="producto-pie">
+                    <span class="precio-grande">
+                        $170.00
+                        <small>MXN</small>
+                    </span>
+
+                    <a class="boton" href="carrito.html">
+                        + Agregar
+                    </a>
+                </div>
+            </article>
+
+            <article class="tarjeta producto-menu">
+                <span class="insignia">
+                    LOCAL
+                </span>
+
+                <img
+                    src="../imagenes/pizza-mexicana.png"
+                    alt="Pizza mexicana">
+
+                <h3>3. La Mexicana</h3>
+
+                <p>
+                    Chorizo, jalapeño en rodajas, cebolla morada
+                    y deliciosa base de frijoles.
+                </p>
+
+                <label>Tamaños y Precios:</label>
+
+                <div class="tamanos">
+                    <button>
+                        Chica: $135
+                    </button>
+
+                    <button class="activo">
+                        Med.: $185
+                    </button>
+
+                    <button>
+                        Fam.: $250
+                    </button>
+                </div>
+
+                <div class="producto-pie">
+                    <span class="precio-grande">
+                        $185.00
+                        <small>MXN</small>
+                    </span>
+
+                    <a class="boton" href="carrito.html">
+                        + Agregar
+                    </a>
+                </div>
+            </article>
+
+            <article class="tarjeta producto-menu">
+                <span class="insignia">
+                    ESPECIAL
+                </span>
+
+                <img
+                    src="../imagenes/pizza-carnes.png"
+                    alt="Pizza carnes frías">
+
+                <h3>4. Carnes Frías</h3>
+
+                <p>
+                    Salami, pepperoni, jamón, salchicha y crujiente
+                    tocino ahumado.
+                </p>
+
+                <label>Tamaños y Precios:</label>
+
+                <div class="tamanos">
+                    <button>
+                        Chica: $145
+                    </button>
+
+                    <button class="activo">
+                        Med.: $195
+                    </button>
+
+                    <button>
+                        Fam.: $270
+                    </button>
+                </div>
+
+                <div class="producto-pie">
+                    <span class="precio-grande">
+                        $195.00
+                        <small>MXN</small>
+                    </span>
+
+                    <a class="boton" href="carrito.html">
+                        + Agregar
+                    </a>
+                </div>
+            </article>
+
+            <article class="tarjeta producto-menu">
+                <span class="insignia">
+                    VEGETARIANA
+                </span>
+
+                <img
+                    src="../imagenes/pizza-vegetariana.png"
+                    alt="Pizza vegetariana">
+
+                <h3>5. Vegetariana</h3>
+
+                <p>
+                    Champiñones, pimiento verde, cebolla, aceitunas
+                    negras y jitomate fresco.
+                </p>
+
+                <label>Tamaños y Precios:</label>
+
+                <div class="tamanos">
+                    <button>
+                        Chica: $130
+                    </button>
+
+                    <button class="activo">
+                        Med.: $180
+                    </button>
+
+                    <button>
+                        Fam.: $240
+                    </button>
+                </div>
+
+                <div class="producto-pie">
+                    <span class="precio-grande">
+                        $180.00
+                        <small>MXN</small>
+                    </span>
+
+                    <a class="boton" href="carrito.html">
+                        + Agregar
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <section class="tarjeta masa">
+            <h3>Tipo de Masa (Personalización)</h3>
+
+            <p>
+                Elige la base de tu pizza. Estos precios se suman
+                automáticamente al total de tu orden.
+            </p>
+
+            <div class="opciones-masa">
+                <button>
+                    Tradicional ($0.00)
+                </button>
+
+                <button>
+                    Fina y Crujiente ($0.00)
+                </button>
+
+                <button class="seleccionada">
+                    Orilla Rellena Queso (+ $30 MXN)
+                </button>
+
+                <button>
+                    Orilla Queso + Pepperoni (+ $45 MXN)
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="pie-grid">
+            <section>
+                <h3><img src="../imagenes/logo-chevery-claro.png" alt="Pizzería Chevery"></h3>
+
+                <p>
+                    La verdadera experiencia artesanal
+                    <br>
+                    en cada rebanada.
+                </p>
+            </section>
+
+            <section>
+                <h3>Horarios de Atención</h3>
+
+                <p>
+                    <b>Lunes a Viernes:</b>
+                    <br>
+                    1:00 PM - 10:30 PM
+                </p>
+
+                <p>
+                    <b>Sábados y Domingos:</b>
+                    <br>
+                    12:00 PM - 11:00 PM
+                </p>
+            </section>
+
+            <section>
+                <h3>Ubicación y Contacto</h3>
+
+                <p>
+                    <b>Dirección:</b>
+                    <br>
+                    Suchiapa, Chiapas, México.
+                </p>
+
+                <p>
+                    <b>Teléfono:</b>
+                    <br>
+                    +52 (966) 112 4798
+                </p>
+            </section>
+
+            <section>
+                <h3>Redes sociales</h3>
+
+                <p>
+                    <img src="../imagenes/icono-instagram.svg" alt=""> PizzasChevery
+                </p>
+
+                <p>
+                    <img src="../imagenes/icono-correo.svg" alt=""> cheverypizzas@gmail.com
+                </p>
+            </section>
+        </div>
+
+        <div class="copyright">
+            © 2026 Pizzería Chevery. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

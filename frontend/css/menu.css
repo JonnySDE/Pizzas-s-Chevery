@@ -1,0 +1,317 @@
+.pagina-menu {
+    padding-top: 44px;
+    padding-bottom: 8px;
+}
+
+.pagina-menu .titulo-pagina {
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.pagina-menu .subtitulo {
+    max-width: 720px;
+    line-height: 1.6;
+}
+
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 36px;
+}
+
+.filtros button {
+    min-width: 84px;
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    background: transparent;
+    padding: 9px 24px;
+    color: var(--verde);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.filtros button.activo {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: var(--crema);
+}
+
+.filtros button,
+.tamanos button,
+.opciones-masa button,
+.producto-menu .boton {
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.filtros button:hover,
+.opciones-masa button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px #294c2920;
+}
+
+.filtros button:active,
+.opciones-masa button:active,
+.producto-menu .boton:active {
+    transform: scale(.96);
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 28px;
+}
+
+.producto-menu {
+    min-width: 0;
+    min-height: 398px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background: var(--crema);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.producto-menu:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px #294c2920;
+}
+
+.producto-menu .insignia {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background: var(--rojo);
+    padding: 5px 10px;
+    color: var(--crema);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: .04em;
+}
+
+.producto-menu:nth-child(2) .insignia,
+.producto-menu:nth-child(5) .insignia {
+    background: var(--verde);
+    color: var(--crema);
+}
+
+.producto-menu:nth-child(3) .insignia {
+    background: var(--terracota);
+    color: var(--crema);
+}
+
+.producto-menu:nth-child(4) .insignia {
+    background: var(--rojo);
+    color: var(--crema);
+}
+
+.producto-menu > img {
+    display: block;
+    width: 100%;
+    height: 141px;
+    object-fit: cover;
+    border-radius: 13px;
+    background: #d6c1a4;
+    transition: transform 300ms ease;
+}
+
+.producto-menu:hover > img {
+    transform: scale(1.025);
+}
+
+.producto-menu h3 {
+    margin: 10px 0 5px;
+    color: var(--verde);
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.producto-menu > p {
+    min-height: 38px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.producto-menu label {
+    margin: 12px 0 5px;
+    color: var(--texto);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tamanos {
+    display: flex;
+    gap: 6px;
+}
+
+.tamanos button {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: #f3d8b1;
+    padding: 7px 4px;
+    color: var(--verde);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.tamanos button.activo {
+    border-color: var(--verde);
+    background: var(--verde);
+    color: white;
+    transform: scale(1.06);
+    box-shadow: 0 4px 9px #294c2928;
+    position: relative;
+    z-index: 1;
+}
+
+.producto-menu .producto-pie {
+    margin-top: auto;
+    padding-top: 24px;
+    gap: 10px;
+}
+
+.producto-menu .precio-grande {
+    color: var(--verde);
+    font-weight: 800;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.producto-menu .precio-grande small {
+    color: var(--rojo);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.producto-menu .boton {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.producto-menu .boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px #294c2930;
+}
+
+.pagina-menu .masa {
+    margin: 56px 0 0;
+    padding: 24px 30px;
+    background: #f3d9b4;
+}
+
+.pagina-menu .masa h3 {
+    margin: 0 0 6px;
+    color: var(--verde);
+    font-size: 18px;
+}
+
+.pagina-menu .masa p {
+    margin: 0 0 16px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.opciones-masa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opciones-masa button {
+    border: 1px solid var(--verde);
+    border-radius: 24px;
+    background: transparent;
+    padding: 10px 18px;
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.opciones-masa button:nth-child(3) {
+    background: var(--verde);
+    color: var(--crema);
+}
+
+.opciones-masa button:nth-child(4) {
+    border-color: var(--rojo);
+    background: var(--rojo);
+    color: var(--crema);
+}
+
+.opciones-masa button:nth-child(2) {
+    background: var(--crema);
+}
+
+.opciones-masa button.seleccionada {
+    border-color: var(--verde);
+    background: var(--verde);
+    color: var(--crema);
+    transform: scale(1.04);
+    box-shadow: 0 4px 10px #294c2928;
+}
+
+.producto-menu[hidden] {
+    display: none;
+}
+
+@keyframes aparecer-tarjeta {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.producto-menu.aparecer {
+    animation: aparecer-tarjeta 240ms ease both;
+}
+
+@media (max-width: 760px) {
+    .grid-menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .pagina-menu {
+        padding-top: 30px;
+    }
+
+    .pagina-menu .titulo-pagina {
+        font-size: 26px;
+    }
+
+    .grid-menu {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .producto-menu > img {
+        height: 180px;
+    }
+
+    .pagina-menu .masa {
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .opciones-masa {
+        align-items: stretch;
+    }
+
+    .opciones-masa button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}

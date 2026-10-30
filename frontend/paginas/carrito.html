@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrito | Pizzería Chevery</title>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/carrito.css" rel="stylesheet">
+</head>
+<body>
+    <header class="encabezado">
+        <a class="marca" href="../index.html">
+            <img src="../imagenes/logo-chevery.png" alt="Pizzería Chevery">
+        </a>
+
+        <nav class="navegacion">
+            <a href="../index.html">
+                Inicio
+            </a>
+            <a href="menu.html">
+                Menú
+            </a>
+        </nav>
+
+        <div class="acciones-encabezado">
+            <a class="carrito-encabezado" href="carrito.html" aria-label="Ver carrito, 2 productos">
+                <img src="../imagenes/icono-carrito.svg" alt="">
+                <span class="contador-carrito">2</span>
+            </a>
+            <a class="boton" href="carrito.html">Ver Carrito</a>
+        </div>
+    </header>
+
+    <main class="contenedor pagina-carrito">
+        <h1 class="titulo-pagina">
+            Tu Carrito y Confirmación
+        </h1>
+
+        <p class="subtitulo">
+            Revisa tus productos seleccionados, confirma tu dirección de entrega en Suchiapa y finaliza tu orden.
+        </p>
+
+        <div class="carrito-layout">
+            <section class="lista-carrito">
+                <div class="aviso-promo">
+                ¡Promoción Aplicada: Martes de Locura 2×1!
+                    <small>
+                        Se descuenta automáticamente la pizza de menor valor en tu pedido.
+                    </small>
+                </div>
+
+                <article class="tarjeta linea-carrito">
+                    <div>
+                        <h3>
+                            1. La Clásica (Pepperoni)
+                        </h3>
+
+                        <p>
+                            <strong>
+                                Tamaño: Mediana ($160.00 MXN)
+                            </strong>
+                        </p>
+
+                        <p>
+                            Masa: Orilla Rellena de Queso (+ $30.00 MXN)
+                        </p>
+                    </div>
+
+                    <div class="cantidad">
+                        <button aria-label="Restar">
+                            −
+                        </button>
+                        1
+                        <button aria-label="Sumar">
+                            +
+                        </button>
+                    </div>
+
+                    <div class="linea-total">
+                        $190.00
+                        <small>
+                            MXN
+                        </small>
+                    </div>
+                </article>
+
+                <article class="tarjeta linea-carrito">
+                    <div>
+                        <h3>
+                            2. Hawaiana
+                        </h3>
+
+                        <p>
+                            <strong>
+                                Tamaño: Mediana ($170.00 MXN)
+                            </strong>
+                        </p>
+
+                        <p>
+                            Masa: Tradicional ($0.00 MXN)
+                        </p>
+
+                        <p>
+                            <strong>
+                                ¡GRATIS 2×1!
+                            </strong>
+                        </p>
+                    </div>
+
+                    <div class="cantidad">
+                        <button aria-label="Restar">
+                            −
+                        </button>
+                        1
+                        <button aria-label="Sumar">
+                            +
+                        </button>
+                    </div>
+
+                    <div class="linea-total">
+                        <del>
+                            $170.00
+                        </del>
+                        <br>
+                        $0.00
+                        <small>
+                            MXN
+                        </small>
+                    </div>
+                </article>
+
+                <div class="tarjeta notas">
+                    <label>
+                        Indicaciones Especiales para Cocina (Opcional):
+                        <textarea placeholder="Ej. ‘Favor de tocar la puerta al llegar’, ‘Servir salsa aparte’..."></textarea>
+                    </label>
+                </div>
+            </section>
+
+            <aside class="tarjeta panel-envio">
+                <h2>
+                    Datos de Envío y Pago
+                </h2>
+
+                <div class="selector-envio">
+                    <button class="activo">
+                        <img src="../imagenes/icono-entrega.svg" alt=""> A Domicilio
+                    </button>
+                    <button>
+                        <img src="../imagenes/icono-tienda.svg" alt=""> Recoger en Tienda
+                    </button>
+                </div>
+
+                <label class="campo">
+                    Nombre Completo *
+                    <input placeholder="Nombre completo">
+                </label>
+
+                <label class="campo">
+                    Teléfono de Contacto *
+                    <input placeholder="+52 961 123 4567">
+                </label>
+
+                <label class="campo">
+                    Dirección de Entrega en Suchiapa *
+                    <textarea placeholder="Calle, número, colonia"></textarea>
+                </label>
+
+                <div class="resumen">
+                    <h3>
+                        Resumen de Cuenta
+                    </h3>
+
+                    <div class="fila-resumen">
+                        <span>
+                            Subtotal (2 Pizzas):
+                        </span>
+                        <b>
+                            $360.00 MXN
+                        </b>
+                    </div>
+
+                    <div class="fila-resumen">
+                        <span>
+                            Costo de Envío (Suchiapa):
+                        </span>
+                        <b>
+                            $0.00 MXN
+                        </b>
+                    </div>
+
+                    <div class="fila-resumen descuento">
+                        <span>
+                            Descuento Promo 2×1:
+                        </span>
+                        <b>
+                            - $170.00 MXN
+                        </b>
+                    </div>
+
+                    <div class="fila-resumen fila-total">
+                        <span>
+                            Total a Pagar:
+                        </span>
+                        <strong>
+                            $190.00
+                            <small>
+                                MXN
+                            </small>
+                        </strong>
+                    </div>
+                </div>
+
+                <a class="boton confirmar" href="pedido.html">
+                    Confirmar Pedido →
+                </a>
+
+                <p class="nota-seguridad">
+                    Tu pedido será procesado inmediatamente en cocina.
+                </p>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <div class="pie-grid">
+            <section>
+                <h3><img src="../imagenes/logo-chevery-claro.png" alt="Pizzería Chevery"></h3>
+
+                <p>
+                    La verdadera experiencia artesanal
+                    <br>
+                    en cada rebanada.
+                </p>
+            </section>
+
+            <section>
+                <h3>Horarios de Atención</h3>
+                <p><b>Lunes a Viernes:</b><br>1:00 PM - 10:30 PM</p>
+                <p><b>Sábados y Domingos:</b><br>12:00 PM - 11:00 PM</p>
+            </section>
+
+            <section>
+                <h3>
+                    Ubicación y Contacto
+                </h3>
+
+                <p>
+                    <b>
+                        Dirección:
+                    </b>
+                    <br>
+                    Suchiapa, Chiapas, México.
+                </p>
+
+                <p>
+                    <b>
+                        Teléfono:
+                    </b>
+                    <br>
+                    +52 (966) 112 4798
+                </p>
+            </section>
+
+            <section>
+                <h3>
+                    Redes sociales
+                </h3>
+
+                <p>
+                    <img src="../imagenes/icono-instagram.svg" alt=""> PizzasChevery
+                </p>
+
+                <p>
+                    <img src="../imagenes/icono-correo.svg" alt=""> cheverypizzas@gmail.com
+                </p>
+            </section>
+        </div>
+
+        <div class="copyright">
+            © 2026 Pizzería Chevery. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

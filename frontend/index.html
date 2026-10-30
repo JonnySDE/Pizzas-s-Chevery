@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#294c29">
+
+    <title>Inicio | Pizzería Chevery</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <a class="marca" href="index.html">
+            <img src="imagenes/logo-chevery.png" alt="Pizzería Chevery">
+        </a>
+
+        <nav class="navegacion">
+            <a class="activa" href="index.html">Inicio</a>
+            <a href="paginas/menu.html">Menú</a>
+        </nav>
+
+        <div class="acciones-encabezado">
+            <a class="carrito-encabezado" href="paginas/carrito.html" aria-label="Ver carrito, 2 productos">
+                <img src="imagenes/icono-carrito.svg" alt="">
+                <span class="contador-carrito">2</span>
+            </a>
+            <a class="boton" href="paginas/menu.html">Ver Menú</a>
+        </div>
+    </header>
+
+    <main class="contenedor inicio">
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="etiqueta">
+                    PROMOCIÓN DEL DÍA
+                </span>
+
+                <h1>
+                    ¡Martes de Locura!
+                    <br>
+                    <span>2×1 en Pizzas Medianas</span>
+                </h1>
+
+                <p>
+                    Especialidades Pepperoni o Hawaiana.
+                    Válido solo en pedidos a domicilio.
+                </p>
+
+                <a class="boton secundario" href="paginas/menu.html">
+                    Aprovechar 2×1 →
+                </a>
+            </div>
+
+            <div
+                aria-label="Pizza pepperoni"
+                class="hero-imagen"
+                role="img">
+            </div>
+        </section>
+
+        <section class="seccion-populares">
+            <div class="encabezado-seccion">
+                <div>
+                    <h2>Pizzas Más Populares</h2>
+
+                    <p class="subtitulo">
+                        Las especialidades preferidas con ingredientes
+                        frescos y masa horneada al momento.
+                    </p>
+                </div>
+
+                <a class="enlace" href="paginas/menu.html">
+                    Ver Menú Completo →
+                </a>
+            </div>
+
+            <div class="productos">
+                <article class="tarjeta producto">
+                    <span class="insignia">
+                        MÁS VENDIDA
+                    </span>
+
+                    <img
+                        src="imagenes/pizza-pepperoni.png"
+                        alt="Pizza pepperoni">
+
+                    <h3>1. Pepperoni</h3>
+
+                    <p>
+                        Queso mozzarella derretido y generosas rodajas
+                        de pepperoni tradicional.
+                    </p>
+
+                    <div class="precios">
+                        Chica: $110 | Mediana: $160 | Familiar: $220
+                    </div>
+
+                    <div class="producto-pie">
+                        <span class="precio-grande">
+                            $110.00
+                            <small>MXN</small>
+                        </span>
+
+                        <a class="boton" href="paginas/menu.html">
+                            + Agregar
+                        </a>
+                    </div>
+                </article>
+
+                <article class="tarjeta producto">
+                    <span class="insignia">
+                        TROPICAL
+                    </span>
+
+                    <img
+                        src="imagenes/pizza-hawaiana.png"
+                        alt="Pizza hawaiana">
+
+                    <h3>2. Hawaiana</h3>
+
+                    <p>
+                        Jamón selecto, piña dulce en trozos y extra
+                        queso mozzarella fundido.
+                    </p>
+
+                    <div class="precios">
+                        Chica: $120 | Mediana: $170 | Familiar: $230
+                    </div>
+
+                    <div class="producto-pie">
+                        <span class="precio-grande">
+                            $120.00
+                            <small>MXN</small>
+                        </span>
+
+                        <a class="boton" href="paginas/menu.html">
+                            + Agregar
+                        </a>
+                    </div>
+                </article>
+
+                <article class="tarjeta producto">
+                    <span class="insignia">
+                        LOCAL
+                    </span>
+
+                    <img
+                        src="imagenes/pizza-mexicana.png"
+                        alt="Pizza mexicana">
+
+                    <h3>3. La Mexicana</h3>
+
+                    <p>
+                        Chorizo, jalapeño en rodajas, cebolla morada
+                        y deliciosa base de frijoles.
+                    </p>
+
+                    <div class="precios">
+                        Chica: $135 | Mediana: $185 | Familiar: $250
+                    </div>
+
+                    <div class="producto-pie">
+                        <span class="precio-grande">
+                            $135.00
+                            <small>MXN</small>
+                        </span>
+
+                        <a class="boton" href="paginas/menu.html">
+                            + Agregar
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="tarjeta masa">
+            <h3>Tipo de Masa (Personaliza tu Orden)</h3>
+
+            <p>
+                Elige tu base favorita al agregar cualquier pizza.
+                El costo se suma automáticamente al total.
+            </p>
+
+            <div class="opciones-masa">
+                <button>
+                    Tradicional ($0.00)
+                </button>
+
+                <button>
+                    Fina y Crujiente ($0.00)
+                </button>
+
+                <button class="seleccionada">
+                    Orilla Rellena Queso (+ $30)
+                </button>
+
+                <button>
+                    Orilla Queso + Pepperoni (+ $45)
+                </button>
+            </div>
+        </section>
+
+        <section class="beneficios">
+            <div class="tarjeta beneficio">
+                <img src="imagenes/icono-entrega.svg" alt="">
+
+                <div>
+                    Entrega Rápida
+                    <small>Directo a tu domicilio</small>
+                </div>
+            </div>
+
+            <div class="tarjeta beneficio">
+                <img src="imagenes/icono-queso.svg" alt="">
+
+                <div>
+                    100% Mozzarella
+                    <small>Queso fundido supremo</small>
+                </div>
+            </div>
+
+            <div class="tarjeta beneficio">
+                <img src="imagenes/icono-pizza.svg" alt="">
+
+                <div>
+                    Masa Horneada
+                    <small>Sabor y crocancia única</small>
+                </div>
+            </div>
+
+            <div class="tarjeta beneficio">
+                <img src="imagenes/icono-sazon.svg" alt="">
+
+                <div>
+                    Sabor Artesanal
+                    <small>El mejor sazón de Suchiapa</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="pie-grid">
+            <section>
+                <h3><img src="imagenes/logo-chevery-claro.png" alt="Pizzería Chevery"></h3>
+
+                <p>
+                    La verdadera experiencia artesanal
+                    <br>
+                    en cada rebanada.
+                </p>
+            </section>
+
+            <section>
+                <h3>Horarios de Atención</h3>
+
+                <p>
+                    <b>Lunes a Viernes:</b>
+                    <br>
+                    1:00 PM - 10:30 PM
+                </p>
+
+                <p>
+                    <b>Sábados y Domingos:</b>
+                    <br>
+                    12:00 PM - 11:00 PM
+                </p>
+            </section>
+
+            <section>
+                <h3>Ubicación y Contacto</h3>
+
+                <p>
+                    <b>Dirección:</b>
+                    <br>
+                    Suchiapa, Chiapas, México.
+                </p>
+
+                <p>
+                    <b>Teléfono:</b>
+                    <br>
+                    +52 (966) 112 4798
+                </p>
+            </section>
+
+            <section>
+                <h3>Redes sociales</h3>
+
+                <p>
+                    <img src="imagenes/icono-instagram.svg" alt=""> PizzasChevery
+                </p>
+
+                <p>
+                    <img src="imagenes/icono-correo.svg" alt=""> cheverypizzas@gmail.com
+                </p>
+            </section>
+        </div>
+
+        <div class="copyright">
+            © 2026 Pizzería Chevery. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
